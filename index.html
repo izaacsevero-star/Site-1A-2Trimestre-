@@ -4,89 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>site</title>
+    <title>A Importância do Exercício Físico</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
         header {
             background-color: rgb(9, 36, 145);
             color: rgb(255, 163, 3);
             text-align: center;
-            max: width 800px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
             border: 5px solid rgb(6, 0, 0);
             padding: 16px;
-
-
+            box-sizing: border-box;
         }
 
         main {
             background-color: rgb(7, 31, 166);
             color: rgb(255, 174, 0);
             text-align: center;
-            max: width 800px;
+            max-width: 800px;
             margin: 0 auto;
             border: 5px solid rgb(6, 0, 0);
             padding: 16px;
             display: flex;
+            flex-direction: column;
+            gap: 24px;
+            box-sizing: border-box;
+        }
+
+        article {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         img {
-            width: 450px height: 330px
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: cover; /* Mantém a imagem bonita sem distorcer */
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
         .artigo-autor {
             font-weight: bold;
         }
-    </style>
 
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>A importancia do exercicio fisico</h1>
-        <p>Boas vindas!!, para o site importancia do exercicio fisico</p>
+        <h1>A importância do exercício físico</h1>
+        <p>Boas-vindas ao site sobre a importância do exercício físico!</p>
     </header>
+
     <main>
+        <!-- Primeiro Artigo -->
         <article>
-        <img src="imagem- blog.png" alt="Ilustração vetorial em tons de azul-escuro e laranja com o título " A
-            importância do exercício físico: Saúde, Energia, Bem-estar". Na imagem, diversas pessoas praticam atividades
-            ao ar livre em um parque, como corrida, ciclismo e flexões. Acima delas, ícones brilhantes destacam os
-            benefícios: saúde cardiovascular, força muscular, bem-estar mental e energia.">
-        <div>
-            <h2>A importancia o exercicio fisico na sua vida</h2>
-            <p>Venha conhecer um pouco de exercicio fisico</p>
-            <p class="artigo-autor">por : izaac Severo</p>
-            <button>​​​💔​​​<span>0</span></button>
-            <button>❤️‍🩹​​<span>0</span></butto>
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" 
+                 alt="Pessoas praticando exercícios físicos ao ar livre">
+            <div>
+                <h2>A importância do exercício físico na sua vida</h2>
+                <p>Venha conhecer um pouco sobre exercício físico.</p>
+                <p class="artigo-autor">por: Izaac Severo</p>
+                <button type="button">💔 <span>0</span></button>
+                <button type="button">❤️‍🩹 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Segundo Artigo -->
         <article>
-        </div>
-
-
-
-        <img src="imagem- blog.png" alt="Ilustração vetorial em tons de azul-escuro e laranja com o título " A
-            importância do exercício físico: Saúde, Energia, Bem-estar". Na imagem, diversas pessoas praticam atividades
-            ao ar livre em um parque, como corrida, ciclismo e flexões. Acima delas, ícones brilhantes destacam os
-            benefícios: saúde cardiovascular, força muscular, bem-estar mental e energia.">
-        <div>
-            <h2>A importancia o exercicio fisico na sua vida</h2>
-            <p>Venha conhecer um pouco de exercicio fisico</p>
-            <p class="artigo-autor">por : izaac Severo</p>
-            <button>​​​💔​​​<span>0</span></button>
-            <button>❤️‍🩹​​<span>0</span></butto>
-        </div>
-
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" 
+                 alt="Pessoa correndo ao ar livre durante o pôr do sol">
+            <div>
+                <h2>A importância do exercício físico na sua vida</h2>
+                <p>Venha conhecer um pouco sobre exercício físico.</p>
+                <p class="artigo-autor">por: Izaac Severo</p>
+                <button type="button">💔 <span>0</span></button>
+                <button type="button">❤️‍🩹 <span>0</span></button>
+            </div>
+        </article>
     </main>
+
+    <script>
+        const botoes = document.querySelectorAll("main button");
+        botoes.forEach(function (botao) {
+            botao.addEventListener("click", function () {
+                console.log("fui clicado");
+                let texto = botao.querySelector("span");
+                let contador = parseInt(texto.textContent, 10);
+                texto.textContent = contador + 1;
+            });
+        });
+    </script>
 </body>
-<script>
-    const botoes = document.querySelectorAll("main button");
-    botoes.forEach(function (botao) {
-        botao.addEventListener("click", botaoClicado);
-        function botaoClicado() {
-            console.log("fui clicado");
-            let texto = botao.querySelector("span");
-            texto.textContent++;
-        }
-    });
-</script>
 
 </html>
